@@ -1,0 +1,36 @@
+# Singularity images (VERY large - never commit!)
+singularity_cache/
+*.sif
+*.img
+
+# Nextflow work directories
+work/
+.nextflow/
+.nextflow.log*
+
+# Large data files
+*.fa
+*.fasta
+*.fastq
+*.fq
+*.bam
+*.vcf
+*.gtf
+*.bed
+*.sam
+
+# Compressed large files
+*.fa.gz
+*.fasta.gz
+*.bam.gz
+*.vcf.gz
+*.bed.gz
+
+# Results
+results/
+test_results/
+
+# System
+.DS_Store
+tmp/
+*.log

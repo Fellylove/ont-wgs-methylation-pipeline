@@ -1,0 +1,27 @@
+# Sample Sheet Examples
+
+## For Basecalling (starting from FAST5/POD5)
+
+sample_id,fast5_dir
+sample1,/path/to/sample1/fast5_pass/
+sample2,/path/to/sample2/pod5/
+sample3,/path/to/sample3/fast5/
+
+## For FASTQ Input (skipping basecalling)
+
+sample_id,fastq
+sample1,/path/to/sample1.fastq.gz
+sample2,/path/to/sample2.fastq.gz
+sample3,/path/to/sample3.fastq.gz
+
+## Notes:
+- sample_id: Unique identifier for each sample
+- fast5_dir: Directory containing FAST5 or POD5 files
+- fastq: Path to gzipped FASTQ file
+
+## Usage:
+# With basecalling
+nextflow run main.nf --input samplesheet_basecalling.csv --genome GRCh38
+
+# Skip basecalling
+nextflow run main.nf --input samplesheet_fastq.csv --genome GRCh38 --skip_basecalling

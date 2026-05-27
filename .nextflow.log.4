@@ -1,0 +1,297 @@
+May-27 13:03:41.861 [main] DEBUG nextflow.cli.Launcher - $> nextflow run main.nf --input test_data/samplesheet.csv --genome GRCh38 --skip_basecalling --skip_methylation --skip_sv -stub-run -resume
+May-27 13:03:41.956 [main] DEBUG nextflow.cli.CmdRun - N E X T F L O W  ~  version 26.04.2
+May-27 13:03:41.978 [main] DEBUG nextflow.plugin.PluginsFacade - Setting up plugin manager > mode=prod; embedded=false; plugins-dir=/users/sburris3/.nextflow/plugins; core-plugins: nf-amazon@3.9.1,nf-azure@1.22.4,nf-cloudcache@0.6.0,nf-codecommit@0.5.2,nf-console@1.3.0,nf-google@1.27.2,nf-k8s@1.5.3,nf-seqera@0.20.0,nf-tower@1.27.0,nf-wave@1.20.0
+May-27 13:03:42.001 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Enabled plugins: []
+May-27 13:03:42.002 [main] INFO  o.pf4j.DefaultPluginStatusProvider - Disabled plugins: []
+May-27 13:03:42.006 [main] INFO  org.pf4j.DefaultPluginManager - PF4J version 3.14.1 in 'deployment' mode
+May-27 13:03:42.020 [main] DEBUG nextflow.util.RetryConfig - Missing nextflow session - using default retry config
+May-27 13:03:42.158 [main] DEBUG nextflow.plugin.PluginUpdater - Using plugin repository: HttpPluginRepository [registry]; url=https://registry.nextflow.io/api
+May-27 13:03:42.164 [main] INFO  org.pf4j.AbstractPluginManager - No plugins
+May-27 13:03:42.205 [main] DEBUG nextflow.config.ConfigBuilder - Found config local: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/nextflow.config
+May-27 13:03:42.209 [main] DEBUG nextflow.config.ConfigBuilder - Parsing config file: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/nextflow.config
+May-27 13:03:42.213 [main] DEBUG nextflow.config.ConfigParserFactory - Using config parser v2
+May-27 13:03:42.230 [main] DEBUG nextflow.config.ConfigBuilder - Applying config profile: `standard`
+May-27 13:03:42.737 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins default=[]
+May-27 13:03:42.739 [main] DEBUG nextflow.plugin.PluginsFacade - Plugins resolved requirement=[]
+May-27 13:03:42.754 [main] DEBUG n.secret.LocalSecretsProvider - Secrets store: /users/sburris3/.nextflow/secrets/store.json
+May-27 13:03:42.758 [main] DEBUG nextflow.secret.SecretsLoader - Discovered secrets providers: [nextflow.secret.LocalSecretsProvider@2c8c16c0] - activable => nextflow.secret.LocalSecretsProvider@2c8c16c0
+May-27 13:03:42.774 [main] DEBUG nextflow.cli.CmdRun - Launching `main.nf` [tender_golick] - revision: 906e113258
+May-27 13:03:42.850 [main] DEBUG nextflow.Session - Session UUID: f1fc8d45-923c-46df-9de6-4d68e5235bf5
+May-27 13:03:42.851 [main] DEBUG nextflow.Session - Run name: tender_golick
+May-27 13:03:42.852 [main] DEBUG nextflow.Session - Executor pool size: 64
+May-27 13:03:42.861 [main] DEBUG nextflow.file.FilePorter - File porter settings maxRetries=3; maxTransfers=50; pollTimeout=null
+May-27 13:03:42.867 [main] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'FileTransfer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-27 13:03:42.887 [main] DEBUG nextflow.cli.CmdRun - 
+  Version: 26.04.2 build 12216
+  Created: 21-05-2026 21:22 UTC (15:22 MDT)
+  System: Linux 4.18.0-553.109.1.el8_10.x86_64
+  Runtime: Groovy 4.0.31 on OpenJDK 64-Bit Server VM 17.0.11+9
+  Encoding: UTF-8 (UTF-8)
+  Process: 998261@hopper [172.17.0.2]
+  CPUs: 64 - Mem: 92.4 GB (9.3 GB) - Swap: 96 GB (96 GB)
+May-27 13:03:42.922 [main] DEBUG nextflow.Session - Work-dir: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/work [fhgfs]
+May-27 13:03:42.940 [main] DEBUG nextflow.executor.ExecutorFactory - Extension executors providers=[]
+May-27 13:03:42.949 [main] DEBUG nextflow.Session - Observer factory (v2): LinObserverFactory
+May-27 13:03:42.952 [main] DEBUG nextflow.Session - Observer factory (v2): DefaultObserverFactory
+May-27 13:03:42.986 [main] DEBUG nextflow.cache.CacheFactory - Using Nextflow cache factory: nextflow.cache.DefaultCacheFactory
+May-27 13:03:42.995 [main] DEBUG nextflow.util.CustomThreadPool - Creating default thread pool > poolSize: 65; maxThreads: 1000
+May-27 13:03:43.290 [main] DEBUG nextflow.Session - Session start
+May-27 13:03:43.305 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow started -- trace file: results/reports/trace.txt
+May-27 13:03:43.310 [main] DEBUG nextflow.script.ScriptLoaderFactory - Using script parser v2
+May-27 13:03:44.527 [main] DEBUG nextflow.script.ScriptRunner - > Launching execution
+May-27 13:03:44.742 [main] INFO  nextflow.Nextflow - 
+=========================================
+ONT WGS Methylation Pipeline v1.0.0
+=========================================
+Input        : test_data/samplesheet.csv
+Genome       : GRCh38
+Output       : results
+Skip basecall: true
+Skip methyl  : true
+Skip SV      : true
+Profile      : standard
+Work dir     : /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/work
+=========================================
+
+May-27 13:03:44.845 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_RAW
+May-27 13:03:44.848 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_RAW
+May-27 13:03:44.849 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_RAW
+May-27 13:03:44.853 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.854 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.863 [main] DEBUG nextflow.executor.Executor - [warm up] executor > local
+May-27 13:03:44.871 [main] DEBUG n.processor.LocalPollingMonitor - Creating local task monitor for executor 'local' > cpus=64; memory=92.4 GB; capacity=64; pollInterval=100ms; dumpInterval=5m
+May-27 13:03:44.874 [main] DEBUG n.processor.TaskPollingMonitor - >>> barrier register (monitor: local)
+May-27 13:03:44.909 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NANOPLOT_RAW': maxForks=0; fair=false; array=0
+May-27 13:03:44.945 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:NANOFILT` matches process NANOFILT
+May-27 13:03:44.947 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.948 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.949 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NANOFILT': maxForks=0; fair=false; array=0
+May-27 13:03:44.954 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_FILTERED
+May-27 13:03:44.956 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_FILTERED
+May-27 13:03:44.957 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_FILTERED
+May-27 13:03:44.959 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.960 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.961 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NANOPLOT_FILTERED': maxForks=0; fair=false; array=0
+May-27 13:03:44.966 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MINIMAP2.*` matches process MINIMAP2_INDEX
+May-27 13:03:44.968 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.968 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.970 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MINIMAP2_INDEX': maxForks=0; fair=false; array=0
+May-27 13:03:44.976 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MINIMAP2.*` matches process MINIMAP2_ALIGN
+May-27 13:03:44.978 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.979 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.980 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MINIMAP2_ALIGN': maxForks=0; fair=false; array=0
+May-27 13:03:44.987 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process NANOPLOT_BAM
+May-27 13:03:44.988 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.989 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.991 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'NANOPLOT_BAM': maxForks=0; fair=false; array=0
+May-27 13:03:44.995 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:MOSDEPTH` matches process MOSDEPTH
+May-27 13:03:44.996 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:44.997 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:44.999 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MOSDEPTH': maxForks=0; fair=false; array=0
+May-27 13:03:45.005 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:CLAIR3` matches process CLAIR3
+May-27 13:03:45.007 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:45.008 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:45.010 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'CLAIR3': maxForks=0; fair=false; array=0
+May-27 13:03:45.016 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:WHATSHAP.*` matches process WHATSHAP_PHASE
+May-27 13:03:45.019 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:45.020 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:45.021 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'WHATSHAP_PHASE': maxForks=0; fair=false; array=0
+May-27 13:03:45.041 [main] DEBUG n.script.dsl.ProcessConfigBuilder - Config settings `withName:PYCOQC|NANOPLOT.*|MULTIQC` matches process MULTIQC
+May-27 13:03:45.044 [main] DEBUG nextflow.executor.ExecutorFactory - << taskConfig executor: local
+May-27 13:03:45.045 [main] DEBUG nextflow.executor.ExecutorFactory - >> processorType: 'local'
+May-27 13:03:45.046 [main] DEBUG nextflow.processor.TaskProcessor - Creating process 'MULTIQC': maxForks=0; fair=false; array=0
+May-27 13:03:45.049 [main] DEBUG nextflow.Session - Process names: NANOPLOT_FILTERED, DORADO_BASECALL, SNIFFLES2, NANOPLOT_BAM, MODKIT_SUMMARY, MULTIQC, PYCOQC, CLAIR3, MOSDEPTH, WHATSHAP_PHASE, MODKIT_PILEUP, MINIMAP2_ALIGN, NANOFILT, NANOPLOT, MINIMAP2_INDEX, NANOPLOT_RAW
+May-27 13:03:45.055 [main] DEBUG nextflow.Session - Igniting dataflow network (15)
+May-27 13:03:45.061 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NANOPLOT_RAW
+May-27 13:03:45.062 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NANOFILT
+May-27 13:03:45.063 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NANOPLOT_FILTERED
+May-27 13:03:45.064 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MINIMAP2_INDEX
+May-27 13:03:45.065 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MINIMAP2_ALIGN
+May-27 13:03:45.066 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > NANOPLOT_BAM
+May-27 13:03:45.066 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MOSDEPTH
+May-27 13:03:45.067 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > CLAIR3
+May-27 13:03:45.068 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > WHATSHAP_PHASE
+May-27 13:03:45.068 [main] DEBUG nextflow.processor.TaskProcessor - Starting process > MULTIQC
+May-27 13:03:45.069 [main] DEBUG nextflow.script.ScriptRunner - Parsed script files:
+  _nf_script_978fa4dd64c4deaa: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/alignment/minimap2.nf
+  _nf_script_30ebe82f50ad7d62: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/phasing/whatshap.nf
+  _nf_script_fe7936750a78de94: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/qc/nanoplot.nf
+  _nf_script_40291f893fec94e5: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/methylation/modkit_pileup.nf
+  _nf_script_9cd84412aa2fe9d0: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/variants/clair3.nf
+  _nf_script_11866b0b912cf9ab: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/methylation/modkit_summary.nf
+  _nf_script_aabbdfd33b214cf6: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/qc/multiqc.nf
+  _nf_script_fd7f5dd77143abe0: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/filtering/nanofilt.nf
+  _nf_script_c74ab872f0cf0c67: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/basecalling/dorado.nf
+  _nf_script_131d7ccd33e9e95c: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/qc/pycoqc.nf
+  _nf_script_68a82144db7c65aa: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/qc/mosdepth.nf
+  Main: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/main.nf
+  _nf_script_872af1cb1b3abf7f: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/modules/local/variants/sniffles2.nf
+May-27 13:03:45.070 [main] DEBUG nextflow.script.ScriptRunner - > Awaiting termination 
+May-27 13:03:45.070 [main] DEBUG nextflow.Session - Session await
+May-27 13:03:45.156 [Actor Thread 41] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://quay.io/biocontainers/nanoplot:1.41.0--pyhdfd78af_0; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-nanoplot-1.41.0--pyhdfd78af_0.img
+May-27 13:03:45.156 [Actor Thread 39] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://quay.io/biocontainers/minimap2:2.24--h7132678_1; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-minimap2-2.24--h7132678_1.img
+May-27 13:03:45.156 [Actor Thread 40] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://quay.io/biocontainers/nanofilt:2.8.0--py_0; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-nanofilt-2.8.0--py_0.img
+May-27 13:03:45.284 [Actor Thread 35] INFO  nextflow.processor.TaskProcessor - [8d/65a2e1] Cached process > NANOFILT (test_sample)
+May-27 13:03:45.284 [Actor Thread 33] INFO  nextflow.processor.TaskProcessor - [fa/07e74a] Cached process > MINIMAP2_INDEX (hg38)
+May-27 13:03:45.284 [Actor Thread 34] INFO  nextflow.processor.TaskProcessor - [35/3e6001] Cached process > NANOPLOT_RAW (test_sample)
+May-27 13:03:45.318 [Actor Thread 34] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'PublishDir' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-27 13:03:45.320 [Actor Thread 52] INFO  nextflow.processor.TaskProcessor - [d4/fd772e] Cached process > NANOPLOT_FILTERED (test_sample)
+May-27 13:03:45.323 [Actor Thread 50] INFO  nextflow.processor.TaskProcessor - [84/15ed5b] Cached process > MINIMAP2_ALIGN (test_sample)
+May-27 13:03:45.332 [Actor Thread 57] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://quay.io/biocontainers/mosdepth:0.3.3--hd299d5a_3; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-mosdepth-0.3.3--hd299d5a_3.img
+May-27 13:03:45.339 [Actor Thread 57] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://hkubal/clair3:latest; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/hkubal-clair3-latest.img
+May-27 13:03:45.344 [Actor Thread 29] INFO  nextflow.processor.TaskProcessor - [4c/5caf45] Cached process > NANOPLOT_BAM (test_sample)
+May-27 13:03:45.345 [Actor Thread 20] INFO  nextflow.processor.TaskProcessor - [88/b7eddd] Cached process > MOSDEPTH (test_sample)
+May-27 13:03:45.359 [Actor Thread 57] DEBUG nextflow.container.SingularityCache - Singularity found local store for image=docker://quay.io/biocontainers/multiqc:1.13--pyhdfd78af_0; path=/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-multiqc-1.13--pyhdfd78af_0.img
+May-27 13:03:45.371 [Actor Thread 63] INFO  nextflow.processor.TaskProcessor - [27/6366e9] Cached process > MULTIQC
+May-27 13:03:45.547 [Task submitter] DEBUG n.executor.local.LocalTaskHandler - Launch cmd line: /bin/bash -ue .command.run
+May-27 13:03:45.550 [Task submitter] INFO  nextflow.Session - [1f/ba522f] Submitted process > CLAIR3 (test_sample)
+May-27 13:03:46.177 [Task monitor] DEBUG n.processor.TaskPollingMonitor - Task completed > TaskHandler[id: 6; name: CLAIR3 (test_sample); status: COMPLETED; exit: 0; error: -; workDir: /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/work/1f/ba522f2843decb07715042634da935]
+May-27 13:03:46.180 [Task monitor] DEBUG nextflow.util.ThreadPoolBuilder - Creating thread pool 'TaskFinalizer' minSize=10; maxSize=192; workQueue=LinkedBlockingQueue[-1]; allowCoreThreadTimeout=false
+May-27 13:03:46.206 [Actor Thread 30] INFO  nextflow.container.SingularityCache - Pulling Singularity image docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 [cache /carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/./singularity_cache/quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img]
+May-27 13:03:49.277 [Actor Thread 57] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=WHATSHAP_PHASE (1); work-dir=null
+  error [java.lang.IllegalStateException]: java.lang.IllegalStateException: Failed to pull singularity image
+  command: singularity pull  --name quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img.pulling.1779908626209 docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 > /dev/null
+  status : 255
+  hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+  message:
+    FATAL:   While making image from oci registry: error fetching image to cache: failed to get checksum for docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0: reading manifest 1.7--py310h4b81fae_0 in quay.io/biocontainers/whatshap: manifest unknown: manifest unknown
+
+May-27 13:03:49.289 [Actor Thread 57] ERROR nextflow.processor.TaskProcessor - Error executing process > 'WHATSHAP_PHASE (1)'
+
+Caused by:
+  Failed to pull singularity image
+    command: singularity pull  --name quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img.pulling.1779908626209 docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 > /dev/null
+    status : 255
+    hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+    message:
+      FATAL:   While making image from oci registry: error fetching image to cache: failed to get checksum for docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0: reading manifest 1.7--py310h4b81fae_0 in quay.io/biocontainers/whatshap: manifest unknown: manifest unknown
+
+
+java.lang.IllegalStateException: java.lang.IllegalStateException: Failed to pull singularity image
+  command: singularity pull  --name quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img.pulling.1779908626209 docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 > /dev/null
+  status : 255
+  hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+  message:
+    FATAL:   While making image from oci registry: error fetching image to cache: failed to get checksum for docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0: reading manifest 1.7--py310h4b81fae_0 in quay.io/biocontainers/whatshap: manifest unknown: manifest unknown
+
+	at nextflow.container.SingularityCache.getCachePathFor(SingularityCache.groovy:354)
+	at nextflow.container.ContainerHandler.createSingularityCache(ContainerHandler.groovy:105)
+	at nextflow.container.ContainerHandler.normalizeImageName(ContainerHandler.groovy:72)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage0(DefaultContainerResolver.groovy:67)
+	at nextflow.container.resolver.DefaultContainerResolver.resolveImage(DefaultContainerResolver.groovy:60)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo0(TaskRun.groovy:721)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at org.codehaus.groovy.runtime.ScriptBytecodeAdapter.invokeMethodOnCurrentN(ScriptBytecodeAdapter.java:97)
+	at nextflow.processor.TaskRun.this$dist$invoke$1(TaskRun.groovy)
+	at nextflow.processor.TaskRun$3.methodMissing(TaskRun.groovy)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaClassImpl.invokeMissingMethod(MetaClassImpl.java:926)
+	at groovy.lang.MetaClassImpl.invokePropertyOrMissing(MetaClassImpl.java:1424)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1343)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy:702)
+	at nextflow.processor.TaskRun$3.apply(TaskRun.groovy)
+	at java.base/java.util.concurrent.ConcurrentHashMap.computeIfAbsent(ConcurrentHashMap.java:1708)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.containerInfo(TaskRun.groovy:699)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.getContainer(TaskRun.groovy:733)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskRun.isContainerEnabled(TaskRun.groovy:799)
+	at nextflow.processor.TaskHasher.compute(TaskHasher.groovy:69)
+	at org.codehaus.groovy.vmplugin.v8.IndyInterface.fromCache(IndyInterface.java:321)
+	at nextflow.processor.TaskProcessor.invokeTask(TaskProcessor.groovy:675)
+	at nextflow.processor.InvokeTaskAdapter.call(InvokeTaskAdapter.groovy:52)
+	at groovyx.gpars.dataflow.operator.DataflowOperatorActor.startTask(DataflowOperatorActor.java:120)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor.access$001(ForkingDataflowOperatorActor.java:35)
+	at groovyx.gpars.dataflow.operator.ForkingDataflowOperatorActor$1.run(ForkingDataflowOperatorActor.java:58)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.IllegalStateException: Failed to pull singularity image
+  command: singularity pull  --name quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img.pulling.1779908626209 docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 > /dev/null
+  status : 255
+  hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+  message:
+    FATAL:   While making image from oci registry: error fetching image to cache: failed to get checksum for docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0: reading manifest 1.7--py310h4b81fae_0 in quay.io/biocontainers/whatshap: manifest unknown: manifest unknown
+
+	at nextflow.container.SingularityCache.runCommand(SingularityCache.groovy:306)
+	at nextflow.container.SingularityCache.downloadContainerImage0(SingularityCache.groovy:273)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.doCall(SingularityCache.groovy:241)
+	at nextflow.container.SingularityCache$_downloadContainerImage_closure1.call(SingularityCache.groovy)
+	at nextflow.file.FileMutex.lock(FileMutex.groovy:106)
+	at nextflow.container.SingularityCache.downloadContainerImage(SingularityCache.groovy:241)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.codehaus.groovy.reflection.CachedMethod.invoke(CachedMethod.java:343)
+	at groovy.lang.MetaMethod.doMethodInvoke(MetaMethod.java:328)
+	at groovy.lang.MetaClassImpl.doInvokeMethod(MetaClassImpl.java:1341)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1096)
+	at groovy.lang.MetaClassImpl.invokeMethod(MetaClassImpl.java:1009)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokePogoMethod(InvokerHelper.java:645)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethod(InvokerHelper.java:628)
+	at org.codehaus.groovy.runtime.InvokerHelper.invokeMethodSafe(InvokerHelper.java:82)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.doCall(SingularityCache.groovy:331)
+	at nextflow.container.SingularityCache$_getLazyImagePath_closure2.call(SingularityCache.groovy)
+	at groovyx.gpars.dataflow.LazyDataflowVariable$1.run(LazyDataflowVariable.java:70)
+	... 3 common frames omitted
+May-27 13:03:49.295 [Actor Thread 57] DEBUG nextflow.Session - Session aborted -- Cause: java.lang.IllegalStateException: Failed to pull singularity image
+  command: singularity pull  --name quay.io-biocontainers-whatshap-1.7--py310h4b81fae_0.img.pulling.1779908626209 docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0 > /dev/null
+  status : 255
+  hint   : Try and increase singularity.pullTimeout in the config (current is "20m")
+  message:
+    FATAL:   While making image from oci registry: error fetching image to cache: failed to get checksum for docker://quay.io/biocontainers/whatshap:1.7--py310h4b81fae_0: reading manifest 1.7--py310h4b81fae_0 in quay.io/biocontainers/whatshap: manifest unknown: manifest unknown
+
+May-27 13:03:49.317 [Actor Thread 57] DEBUG nextflow.Session - The following nodes are still active:
+[process] WHATSHAP_PHASE
+  status=ACTIVE
+  port 0: (queue) OPEN  ; channel: -
+  port 1: (queue) closed; channel: -
+  port 2: (value) bound ; channel: reference
+  port 3: (cntrl) -     ; channel: $
+
+May-27 13:03:49.325 [Actor Thread 57] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=8; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=176ms; failedDuration=0ms; cachedDuration=38ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=8; peakMemory=80 GB; ]
+May-27 13:03:49.381 [Task monitor] DEBUG n.processor.TaskPollingMonitor - <<< barrier arrives (monitor: local) - terminating tasks monitor poll loop
+May-27 13:03:49.517 [Actor Thread 57] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+May-27 13:03:49.939 [Actor Thread 57] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+May-27 13:03:50.000 [Actor Thread 57] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+May-27 13:03:50.008 [main] DEBUG nextflow.Session - Session await > all processes finished
+May-27 13:03:50.009 [main] DEBUG nextflow.Session - Session await > all barriers passed
+May-27 13:03:50.010 [Actor Thread 55] DEBUG nextflow.processor.TaskProcessor - Handling unexpected condition for
+  task: name=WHATSHAP_PHASE; work-dir=null
+  error [java.lang.InterruptedException]: java.lang.InterruptedException
+May-27 13:03:50.013 [main] DEBUG n.trace.WorkflowStatsObserver - Workflow completed > WorkflowStats[succeededCount=1; failedCount=0; ignoredCount=0; cachedCount=8; pendingCount=0; submittedCount=0; runningCount=0; retriesCount=0; abortedCount=0; succeedDuration=176ms; failedDuration=0ms; cachedDuration=38ms;loadCpus=0; loadMemory=0; peakRunning=1; peakCpus=8; peakMemory=80 GB; ]
+May-27 13:03:50.015 [main] DEBUG nextflow.trace.ReportObserver - Workflow completed -- rendering execution report
+May-27 13:03:50.299 [main] DEBUG nextflow.trace.TimelineObserver - Workflow completed -- rendering execution timeline
+May-27 13:03:50.343 [main] DEBUG nextflow.trace.TraceFileObserver - Workflow completed -- saving trace file
+May-27 13:03:50.355 [main] DEBUG nextflow.cache.CacheDB - Closing CacheDB done
+May-27 13:03:50.368 [main] DEBUG nextflow.script.ScriptRunner - > Execution complete -- Goodbye

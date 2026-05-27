@@ -1,0 +1,1 @@
+WARNING: Skipping mount /opt/spack/opt/spack/linux-rocky8-skylake_avx512/gcc-8.5.0/singularity-3.8.5-5x3v5slydkd4pay5yu7ilfrjc6hz2dh5/var/singularity/mnt/session/etc/resolv.conf [files]: /etc/resolv.conf doesn't exist in container

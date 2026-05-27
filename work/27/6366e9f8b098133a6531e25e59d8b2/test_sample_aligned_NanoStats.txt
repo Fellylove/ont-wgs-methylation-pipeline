@@ -1,0 +1,1 @@
+/carc/scratch/projects/gursingh/gursingh2016399/Sylvia/ont-wgs-methylation-pipeline/work/4c/5caf45a270c88339b35996bc493a75/test_sample_aligned_NanoStats.txt
